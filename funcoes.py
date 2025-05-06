@@ -47,3 +47,18 @@ def calcula_pontos_sequencia_alta(dados_rolados):
                     if dados_rolados[i] + 4 in dados_rolados:
                         return 30
     return 0
+
+def calcula_pontos_full_house(dados_rolados):
+    dados = {}
+    soma = 0
+    for i in range(len(dados_rolados)):
+        if dados_rolados[i] not in dados:
+            dados[dados_rolados[i]] = 1
+        else:
+            dados[dados_rolados[i]] += 1
+    if len(dados) == 2:
+        for qtd in dados.values():
+            if qtd == 2:
+                for valor, vezes in dados.items():
+                    soma += valor * vezes
+    return soma
