@@ -88,3 +88,20 @@ def calcula_pontos_quina(dados_rolados):
         if qtd >= 5:
             return 50
     return 0
+
+def calcula_pontos_regra_avancada(dados_rolados):
+    quina = calcula_pontos_quina(dados_rolados)
+    fullhouse = calcula_pontos_full_house(dados_rolados)
+    quadra = calcula_pontos_quadra(dados_rolados)
+    soma = calcula_pontos_soma(dados_rolados)
+    seqalta = calcula_pontos_sequencia_alta(dados_rolados)
+    seqbaixa = calcula_pontos_sequencia_baixa(dados_rolados)
+    tudo = {
+    'cinco_iguais': quina,
+    'full_house': fullhouse,
+    'quadra': quadra,
+    'sem_combinacao': soma,
+    'sequencia_alta': seqalta,
+    'sequencia_baixa': seqbaixa
+    }
+    return tudo
