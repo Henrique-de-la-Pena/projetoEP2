@@ -76,3 +76,15 @@ def calcula_pontos_quadra(dados_rolados):
             for valor, vezes in dados.items():
                 soma += valor * vezes
     return soma
+
+def calcula_pontos_quina(dados_rolados):
+    dados = {}
+    for i in range(len(dados_rolados)):
+        if dados_rolados[i] not in dados:
+            dados[dados_rolados[i]] = 1
+        else:
+            dados[dados_rolados[i]] += 1
+    for qtd in dados.values():
+        if qtd >= 5:
+            return 50
+    return 0
